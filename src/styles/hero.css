@@ -1,0 +1,42 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #4ade80;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.primary {
+  background: #4ade80;
+  color: #000;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.secondary {
+  border: 1px solid #4ade80;
+  padding: 12px 22px;
+  border-radius: 6px;
+}
