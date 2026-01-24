@@ -1,13 +1,12 @@
-import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
+import BackgroundParticles from "./components/BackgroundParticles"
+import "./styles/global.css"
 
-function App() {
+export default function App() {
   return (
     <>
-      <Navbar />
+      <BackgroundParticles />
       <Hero />
     </>
   )
 }
-
-export default App
