@@ -1,11 +1,16 @@
 import { motion } from "framer-motion"
 import "../styles/hero.css"
+import Navbar from "./Navbar"
+import HeroMeta from "./HeroMeta"
 
 const firstName = "Ankit"
 const lastName = "Ahirrao"
 
 export default function Hero() {
   return (
+    <>
+    <Navbar />
+    <HeroMeta />
     <section className="hero">
       {/* keep your background layer as-is */}
 
@@ -65,5 +70,8 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
+    </>
+    
   )
+
 }

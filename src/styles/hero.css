@@ -48,47 +48,47 @@
   max-width: 900px;
 }
 
-/* Small intro */
 .hero-intro {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.15em;
+  font-size: 12px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #64748b;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
-/* NAME – Parth-style weight & spacing */
+
 .hero-name {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: clamp(4.5rem, 11vw, 8.5rem);
+  font-size: clamp(6rem, 18vw, 14rem); /* THIS is the key */
   font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
   color: #0f172a;
   display: flex;
   justify-content: center;
-  gap: 4px;
-  margin-bottom: 28px;
+  gap: 6px;
+  margin-bottom: 40px;
 }
+
 
 /* Subtitle – calmer, premium */
 .hero-subtitle {
-  font-family: "Inter", system-ui, sans-serif;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.75;
   color: #334155;
 }
 
+
 /* Buttons */
 .hero-actions {
-  margin-top: 42px;
+  margin-top: 56px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 20px;
 }
+
 
 .btn {
   font-family: "Inter", system-ui, sans-serif;

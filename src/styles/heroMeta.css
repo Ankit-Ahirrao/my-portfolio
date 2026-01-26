@@ -1,0 +1,24 @@
+.meta {
+  position: fixed;
+  bottom: 36px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;              /* bigger than before */
+  font-weight: 600;             /* bold like Parth */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0f172a;
+  z-index: 20;
+}
+
+.meta-left {
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta-right {
+  right: 40px;
+  text-align: right;
+  opacity: 0.9;
+}
