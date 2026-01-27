@@ -118,3 +118,70 @@
   background: #0f172a;
   color: white;
 }
+
+/* =====================
+   RESPONSIVE POLISH
+   ===================== */
+
+/* Large tablets & small laptops */
+@media (max-width: 1024px) {
+  .hero-name {
+    font-size: clamp(4.5rem, 16vw, 10rem);
+    gap: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 15.5px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero {
+    height: 100svh; /* better mobile viewport handling */
+  }
+
+  .hero-name {
+    font-size: clamp(3.8rem, 14vw, 8rem);
+    letter-spacing: -0.05em;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    padding: 0 8px;
+  }
+
+  .hero-actions {
+    margin-top: 44px;
+    gap: 16px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .hero-intro {
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 13vw, 5.2rem);
+    line-height: 0.95;
+  }
+
+  .hero-subtitle {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
