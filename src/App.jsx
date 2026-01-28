@@ -1,8 +1,7 @@
 import Hero from "./components/Hero"
-import BackgroundParticles from "./components/BackgroundParticles"
-import "./styles/global.css"
 import About from "./components/About"
-
+import Skills from "./components/Skills"
+import BackgroundParticles from "./components/BackgroundParticles"
 
 export default function App() {
   return (
@@ -10,6 +9,7 @@ export default function App() {
       <BackgroundParticles />
       <Hero />
       <About />
+      <Skills />
     </>
   )
 }

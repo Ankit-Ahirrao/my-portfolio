@@ -2,9 +2,9 @@
   position: fixed;
   bottom: 36px;
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 13px;              /* bigger than before */
-  font-weight: 600;             /* bold like Parth */
-  letter-spacing: 0.18em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em; /* slightly tighter, matches hero */
   text-transform: uppercase;
   color: #0f172a;
   z-index: 20;
@@ -21,4 +21,31 @@
   right: 40px;
   text-align: right;
   opacity: 0.9;
+}
+
+/* =====================
+   RESPONSIVE SAFETY
+   ===================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .meta {
+    font-size: 12px;
+    bottom: 24px;
+  }
+
+  .meta-left {
+    left: 24px;
+  }
+
+  .meta-right {
+    right: 24px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .meta {
+    display: none; /* hide on small screens */
+  }
 }

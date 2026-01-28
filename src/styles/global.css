@@ -4,9 +4,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #ffffff;
   color: #0f172a;
   font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
   overflow-x: hidden;
+
+  /* 🔑 Spacing & typography polish */
+  line-height: 1.6;        /* tighter than default */
+  letter-spacing: -0.01em; /* subtle premium feel */
+}
+
+section {
+  padding: 100px 0;
+}
+
+
+@media (max-width: 768px) {
+  section {
+    padding: 72px 0;
+  }
 }

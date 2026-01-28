@@ -1,0 +1,81 @@
+.skills {
+  padding: 140px 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(15, 23, 42, 0.04),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 100%
+    );
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Eyebrow */
+.skills-eyebrow {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* Title */
+.skills-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 48px;
+}
+
+.skills-title span {
+  background: linear-gradient(90deg, #6366f1, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Skill cloud */
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 20px;
+}
+
+/* Skill pill */
+.skill-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.skill-icon {
+  font-size: 16px;
+}
+
+/* Hover polish */
+.skill-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.skills-inline {
+  gap: 16px 20px; /* tighter horizontal & vertical spacing */
+}
