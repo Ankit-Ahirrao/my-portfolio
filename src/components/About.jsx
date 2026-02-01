@@ -1,5 +1,5 @@
 import "../styles/about.css"
-import profileImg from "../assets/profile.jpg" // add your image
+import profileImg from "../assets/profile.jpg"
 
 export default function About() {
   return (
@@ -8,30 +8,31 @@ export default function About() {
 
         {/* LEFT CONTENT */}
         <div className="about-content">
-          <p className="about-label">— ABOUT</p>
+          <span className="about-label">ABOUT</span>
 
-          <h2 className="about-title">
-            Full Stack Developer with a focus on
-            building reliable & scalable systems.
+          <h2 className="about-title serif-heading">
+            Designing & building
+            <br />
+            reliable, scalable systems
           </h2>
 
           <p className="about-text">
-            I am a Full Stack Developer with 4+ years of professional experience
+            I’m a Full Stack Developer with 4+ years of professional experience
             building web applications using modern technologies.
             I focus on backend engineering, clean APIs, and intuitive
             frontend experiences.
           </p>
 
           <p className="about-text">
-            I have worked extensively with Ruby on Rails, REST APIs,
+            I’ve worked extensively with Ruby on Rails, REST APIs,
             databases, and modern JavaScript frameworks.
             I enjoy solving real-world problems and building
-            products that scale.
+            products that scale gracefully.
           </p>
 
           <p className="about-tech">
-            <strong>Tech:</strong> JavaScript · React · Ruby on Rails ·
-            Node.js · PostgreSQL · AWS
+            <strong>Core stack:</strong>{" "}
+            JavaScript · React · Ruby on Rails · Node.js · PostgreSQL · AWS
           </p>
 
           {/* LINKS */}

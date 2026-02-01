@@ -1,6 +1,6 @@
 .story {
+  padding: 140px 0;
   background: #ffffff;
-  color: #0f172a;
 }
 
 .story-container {
@@ -9,60 +9,61 @@
   padding: 0 24px;
 
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px; /* 👈 BIGGER GAP = cleaner layout */
   align-items: center;
 }
 
 /* TEXT */
 .story-label {
   font-size: 12px;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #64748b;
-  margin-bottom: 16px;
-  display: block;
+  margin-bottom: 18px;
 }
 
 .story-title {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
-  font-weight: 800;
+  font-size: clamp(2.8rem, 4.8vw, 3.6rem);
+  font-weight: 700; /* slightly lighter for serif */
   line-height: 1.15;
   margin-bottom: 28px;
+  color: #0f172a;
 }
 
 .story-title span {
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #8b5cf6;
 }
 
 .story-text {
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #334155;
   max-width: 560px;
   margin-bottom: 18px;
 }
 
 .story-cta {
-  margin-top: 16px;
+  margin-top: 28px;
   display: inline-block;
   font-size: 14px;
   font-weight: 600;
   color: #0f172a;
   text-decoration: none;
-  transition: transform 0.2s ease;
 }
 
 .story-cta:hover {
-  transform: translateX(6px);
+  text-decoration: underline;
 }
+
 
 .story-images {
   position: relative;
-  width: 320px;
+  width: 100%;
   height: 420px;
+  display: flex;
+  justify-content: flex-end; /* 👈 pushes stack right */
+  align-items: center;
 }
 
 .story-image {
@@ -70,32 +71,36 @@
   width: 280px;
   height: 360px;
   object-fit: cover;
-  border-radius: 22px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.18);
   background: #fff;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .story-container {
     grid-template-columns: 1fr;
-    gap: 64px;
+    gap: 80px;
   }
 
   .story-images {
-    order: -1;
-    height: 360px;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .story-title {
-    font-size: 2rem;
+  .story {
+    padding: 100px 0;
   }
 
-  .story-image {
-    width: 220px;
-    height: 280px;
+  .story-title {
+    font-size: 2.2rem;
+  }
+
+  .story-text {
+    font-size: 15px;
   }
 }
+
 

@@ -35,10 +35,10 @@ export default function Story() {
         <div className="story-content">
           <span className="story-label">A QUICK GLANCE</span>
 
-          <h2 className="story-title">
-            Building the bridge <br />
-            between ideas and <span>execution</span>
-          </h2>
+          <h2 className="story-title serif-heading">
+            Transforming concepts <br />
+            into meaningful <span>products</span>
+            </h2>
 
           <p className="story-text">
             I’m Ankit Ahirrao, a full-stack engineer focused on building scalable,

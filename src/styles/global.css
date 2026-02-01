@@ -19,6 +19,10 @@ body {
   letter-spacing: -0.01em; /* subtle premium feel */
 }
 
+.serif-heading {
+  font-family: "Times New Roman", Times, serif;
+}
+
 section {
   padding: 100px 0;
 }

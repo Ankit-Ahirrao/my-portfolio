@@ -74,12 +74,13 @@
 
 /* Subtitle – calmer, premium */
 .hero-subtitle {
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 15.5px;
+  line-height: 1.7;
   color: #334155;
 }
+
 
 
 /* Buttons */
@@ -119,6 +120,20 @@
   background: #0f172a;
   color: white;
 }
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(99, 102, 241, 0.08),
+      transparent 55%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
 
 /* =====================
    RESPONSIVE POLISH

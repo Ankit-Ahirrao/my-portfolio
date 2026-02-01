@@ -31,8 +31,8 @@ export default function Skills() {
       <div className="skills-container">
 
         <p className="skills-eyebrow">MY SKILLSET</p>
-
-        <h2 className="skills-title">
+        
+        <h2 className="skills-title serif-heading">
           My <span>Technical</span> Stack
         </h2>
 
