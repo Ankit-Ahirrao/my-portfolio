@@ -4,6 +4,7 @@ import Skills from "./components/Skills"
 import BackgroundParticles from "./components/BackgroundParticles"
 import Story from "./components/Story"
 import Experience from "./components/Experience"
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Skills />
       <Story />
       <Experience />
+      <Footer />
     </>
   )
 }

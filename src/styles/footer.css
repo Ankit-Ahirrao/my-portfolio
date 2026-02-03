@@ -1,0 +1,182 @@
+.footer {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* =====================
+   TOP CTA
+   ===================== */
+
+.footer-cta {
+  padding: 120px 0 100px;
+}
+
+.footer-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 72px;
+}
+
+.footer-cta-text h2 {
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.footer-cta-text span {
+  color: #64748b;
+}
+
+.footer-cta-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 520px;
+}
+
+/* SOFT ORB (CALMER) */
+.footer-orb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(125, 211, 252, 0.6),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(192, 132, 252, 0.6),
+      transparent 60%
+    );
+
+  filter: blur(22px);
+  opacity: 0.9;
+}
+
+/* =====================
+   MAIN FOOTER
+   ===================== */
+
+.footer-main {
+  padding-bottom: 48px;
+}
+
+.footer-main-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 52px 28px;
+
+  background: #ffffff;
+  border-radius: 26px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+
+  display: grid;
+  grid-template-columns: 1.3fr 2.7fr;
+  gap: 72px;
+}
+
+/* BRAND */
+.footer-brand h3 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #475569;
+  max-width: 360px;
+}
+
+/* COLUMNS */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+}
+
+.footer-columns h4 {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.footer-columns a,
+.footer-columns span {
+  display: block;
+  font-size: 14.5px;
+  color: #0f172a;
+  text-decoration: none;
+  margin-bottom: 9px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-columns a:hover {
+  opacity: 0.55;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 900px) {
+  .footer-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 56px;
+  }
+
+  .footer-cta-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-main-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-cta {
+    padding: 100px 0 80px;
+  }
+
+  .footer-cta-text h2 {
+    font-size: 2.4rem;
+  }
+}

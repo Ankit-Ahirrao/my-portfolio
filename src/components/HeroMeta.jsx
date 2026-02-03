@@ -4,11 +4,12 @@ export default function HeroMeta() {
   return (
     <>
       <div className="meta meta-left">
-        📍 Indore, India
+        <span className="meta-dot" />
+        Indore, India
       </div>
 
       <div className="meta meta-right">
-        Full Stack Developer
+        Full-Stack Developer
       </div>
     </>
   )
