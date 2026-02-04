@@ -1,28 +1,57 @@
+import { useEffect, useState } from "react"
 import "../styles/navbar.css"
 
+const sections = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Work" },
+  { id: "contact", label: "Contact" }
+]
+
 export default function Navbar() {
+  const [active, setActive] = useState("home")
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id)
+          }
+        })
+      },
+      {
+        rootMargin: "-40% 0px -55% 0px", // 🔑 controls when section becomes active
+        threshold: 0
+      }
+    )
+
+    sections.forEach(({ id }) => {
+      const section = document.getElementById(id)
+      if (section) observer.observe(section)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <nav className="navbar">
-      {/* Brand / Initials */}
+      {/* Brand */}
       <span className="nav-brand">AA</span>
 
-      {/* Navigation Links */}
+      {/* Links */}
       <ul className="nav-links">
-        <li>
-          <a href="#home" className="active">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Work</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+        {sections.map(({ id, label }) => (
+          <li key={id}>
+            <a
+              href={`#${id}`}
+              className={active === id ? "active" : ""}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   )

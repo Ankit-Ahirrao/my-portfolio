@@ -1,8 +1,35 @@
+/* =====================
+   RESET
+   ===================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* =====================
+   ROOT SYSTEM
+   ===================== */
+
+:root {
+  /* Section spacing system */
+  --section-padding-xl: 140px;
+  --section-padding-lg: 120px;
+  --section-padding-md: 96px;
+  --section-padding-sm: 72px;
+  --section-padding-xs: 56px;
+
+  /* Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+}
+
+/* =====================
+   BASE
+   ===================== */
 
 html {
   scroll-behavior: smooth;
@@ -10,26 +37,94 @@ html {
 
 body {
   background: #ffffff;
-  color: #0f172a;
+  color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
   overflow-x: hidden;
 
-  /* 🔑 Spacing & typography polish */
-  line-height: 1.6;        /* tighter than default */
-  letter-spacing: -0.01em; /* subtle premium feel */
+  /* Typography polish */
+  line-height: 1.65;              /* slightly more breathing room */
+  letter-spacing: -0.01em;        /* subtle premium tightness */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* =====================
+   TYPOGRAPHY UTILITIES
+   ===================== */
 
 .serif-heading {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  letter-spacing: -0.02em;
 }
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* =====================
+   SECTION SYSTEM
+   ===================== */
 
 section {
-  padding: 100px 0;
+  padding: var(--section-padding-md) 0;
 }
 
+/* Sections that should feel tighter */
+.section-tight {
+  padding: var(--section-padding-sm) 0;
+}
+
+/* Sections that should feel expansive */
+.section-wide {
+  padding: var(--section-padding-lg) 0;
+}
+
+/* Visual section closure without harsh lines */
+.section-soft-divider {
+  position: relative;
+}
+
+.section-soft-divider::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+/* =====================
+   LINKS & BUTTONS
+   ===================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 1024px) {
+  section {
+    padding: var(--section-padding-sm) 0;
+  }
+}
 
 @media (max-width: 768px) {
   section {
-    padding: 72px 0;
+    padding: var(--section-padding-xs) 0;
   }
 }

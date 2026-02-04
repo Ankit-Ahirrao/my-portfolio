@@ -12,7 +12,7 @@ export default function Hero() {
       <Navbar />
       <HeroMeta />
 
-      <section className="hero">
+      <section id="home" className="hero">
         {/* subtle animated glow */}
         <motion.div
           className="hero-glow"

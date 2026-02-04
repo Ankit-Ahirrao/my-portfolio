@@ -29,7 +29,7 @@ export default function Footer() {
 
 
       {/* MAIN FOOTER */}
-      <section className="footer-main">
+      <section id= "footer" className="footer-main">
         <div className="footer-main-inner">
 
           {/* BRAND */}
