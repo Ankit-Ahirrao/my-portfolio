@@ -14,11 +14,11 @@ export default function App() {
       <BackgroundParticles />
       <Hero />
       <About />
-      <Skills />
-      <Projects />
-      <GithubActivity />
-      <Story />
       <Experience />
+      <Story />
+      <Skills />
+      <GithubActivity />
+      <Projects />
       <Footer />
     </>
   )

@@ -3,6 +3,7 @@ import "../styles/experience.css"
 
 const experiences = [
   {
+    type: "education",
     title: "M.Tech — Computer Science",
     org: "Indian Institute of Technology, Jammu",
     period: "2025 – 2027 (Current)",
@@ -12,6 +13,7 @@ const experiences = [
     tags: ["Machine Learning", "Systems", "Algorithms"]
   },
   {
+    type: "work",
     title: "Software Engineer — Ruby on Rails",
     org: "Precious Infosystem",
     period: "Nov 2023 – Jun 2025",
@@ -21,6 +23,7 @@ const experiences = [
     tags: ["Ruby on Rails", "APIs", "MongoDB", "PostgreSQL"]
   },
   {
+    type: "work",
     title: "Junior Software Engineer",
     org: "Bestpeers Infosystem",
     period: "May 2022 – Oct 2023",
@@ -30,6 +33,7 @@ const experiences = [
     tags: ["Ruby", "RSpec", "REST APIs"]
   },
   {
+    type: "work",
     title: "Assistant System Engineer",
     org: "Tata Consultancy Services (TCS)",
     period: "Jun 2021 – Jun 2022",
@@ -39,6 +43,7 @@ const experiences = [
     tags: ["SQL", "ETL", "QlikView"]
   },
   {
+    type: "education",
     title: "B.Tech — Information Technology",
     org: "Chameli Devi Group of Institutions (RGPV)",
     period: "2017 – 2021",
@@ -63,10 +68,10 @@ export default function Experience() {
           {experiences.map((item, index) => (
             <motion.div
               key={index}
-              className="timeline-item"
-              initial={{ opacity: 0, y: 40 }}
+              className={`timeline-item ${item.type}`}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
               viewport={{ once: true }}
             >
               <div className="timeline-dot" />

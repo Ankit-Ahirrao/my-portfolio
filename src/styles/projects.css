@@ -1,6 +1,6 @@
 .projects {
   background: #ffffff;
-  padding: 140px 0;
+  padding: 120px 0;
 }
 
 .projects-container {
@@ -9,41 +9,39 @@
   padding: 0 24px;
 }
 
-/* Eyebrow */
+/* Header */
 .projects-label {
   font-size: 12px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 14px;
+  color: #94a3b8;
+  margin-bottom: 10px;
 }
 
-/* Title */
 .projects-title {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-size: clamp(2.6rem, 4.5vw, 3.4rem);
   font-weight: 800;
   margin-bottom: 64px;
-  color: #0f172a;
 }
 
 .projects-title span {
   color: #6366f1;
 }
 
-/* GRID */
+/* Grid */
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  grid-template-columns: repeat(2, 1fr);
   gap: 36px;
 }
 
-/* CARD */
+/* Card */
 .project-card {
   background: #ffffff;
-  border-radius: 22px;
-  padding: 32px;
+  border-radius: 24px;
+  padding: 34px;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 .project-card:hover {
@@ -51,12 +49,37 @@
   box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
 }
 
-/* Card content */
+/* Badge */
+.project-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.project-badge.web {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.project-badge.backend {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.project-badge.ai {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+/* Content */
 .project-card h3 {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
-  margin-bottom: 14px;
-  color: #0f172a;
+  margin-bottom: 10px;
 }
 
 .project-desc {
@@ -79,29 +102,33 @@
   border-radius: 999px;
   background: #f8fafc;
   border: 1px solid #e5e7eb;
-  color: #0f172a;
 }
 
-/* RESPONSIVE */
+/* Actions */
+.project-actions {
+  margin-top: 22px;
+}
 
-/* Tablet */
+.project-action {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.project-action.muted {
+  color: #64748b;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
   .projects {
-    padding: 110px 0;
-  }
-
-  .projects-list {
-    gap: 28px;
+    padding: 100px 0;
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .projects-list {
     grid-template-columns: 1fr;
-  }
-
-  .projects-title {
-    font-size: 2.2rem;
   }
 }
