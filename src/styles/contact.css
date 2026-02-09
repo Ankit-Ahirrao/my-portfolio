@@ -1,0 +1,153 @@
+.contact {
+  background: #ffffff;
+  padding: 140px 0;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.contact-label {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.contact-title {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.contact-title span {
+  color: #6366f1;
+}
+
+.contact-subtitle {
+  margin-top: 18px;
+  font-size: 16px;
+  color: #475569;
+  max-width: 520px;
+}
+
+/* Grid */
+.contact-grid {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+}
+
+/* Contact cards */
+.contact-cards {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 18px;
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  text-decoration: none;
+  color: #0f172a;
+  transition: all 0.25s ease;
+  background: #ffffff;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.contact-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #475569;
+}
+
+.contact-card span {
+  font-size: 13px;
+  color: #6366f1;
+}
+
+/* Form */
+.contact-form {
+  background: #f8fafc;
+  border-radius: 22px;
+  padding: 32px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.contact-form h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.contact-form button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
