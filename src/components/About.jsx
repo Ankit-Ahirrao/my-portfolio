@@ -17,22 +17,22 @@ export default function About() {
           </h2>
 
           <p className="about-text">
-            I’m a Full Stack Developer with 4+ years of professional experience
-            building web applications using modern technologies.
-            I focus on backend engineering, clean APIs, and intuitive
-            frontend experiences.
+            I’m a Full Stack Engineer with 4+ years of experience building
+            backend-heavy web applications and production-grade systems.
+            My work focuses on clean architecture, scalable APIs,
+            and long-term maintainability.
           </p>
 
           <p className="about-text">
-            I’ve worked extensively with Ruby on Rails, REST APIs,
-            databases, and modern JavaScript frameworks.
-            I enjoy solving real-world problems and building
-            products that scale gracefully.
+            I’ve worked extensively with Ruby on Rails, RESTful services,
+            relational and NoSQL databases, and modern JavaScript frameworks.
+            I enjoy solving real-world problems where performance,
+            reliability, and clarity matter.
           </p>
 
           <p className="about-tech">
             <strong>Core stack:</strong>{" "}
-            JavaScript · React · Ruby on Rails · Node.js · PostgreSQL · AWS
+            React · Ruby on Rails · Node.js · PostgreSQL · AWS
           </p>
 
           {/* LINKS */}
@@ -50,13 +50,6 @@ export default function About() {
               rel="noreferrer"
             >
               GitHub
-            </a>
-            <a
-              href="https://www.instagram.com/ankiitahirrao/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
             </a>
             <a href="mailto:ahirraoankit5@gmail.com">
               Email
