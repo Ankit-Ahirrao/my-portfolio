@@ -1,3 +1,6 @@
+/* =====================
+   MAIN HERO SECTION
+   ===================== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -26,7 +29,7 @@
     );
 }
 
-/* subtle vignette */
+/* Subtle vignette overlay */
 .hero::after {
   content: "";
   position: absolute;
@@ -41,18 +44,22 @@
 }
 
 /* =====================
-   CONTENT
+   CONTENT BOX
    ===================== */
-
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   padding: 0 24px;
-  max-width: 820px;
+  max-width: 1100px; /* Increased to prevent text wrapping too early */
+  
+  /* Flex forces everything inside to be centered horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Intro */
+/* Intro Label */
 .hero-intro {
   font-size: 11px;
   letter-spacing: 0.34em;
@@ -61,43 +68,41 @@
   margin-bottom: 24px;
 }
 
-/* Name */
+/* Name (Updated for centering and animation) */
 .hero-name {
   font-family: "Times New Roman", Georgia, serif;
-  font-size: clamp(5rem, 13vw, 11rem);
+  font-size: clamp(3.5rem, 11vw, 10rem);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1;
-
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   color: #0f172a;
 
-  margin: 0 auto 32px auto;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
-
-  white-space: nowrap;      /* 👈 Forces single line */
-  width: fit-content;       /* 👈 True centering */
+  width: 100%;
 }
 
-
-.hero-name-inner {
+/* Individual letter spacing */
+.hero-name span {
   display: inline-block;
-  text-align: center;
+  white-space: pre; /* Preserves the space between first and last name */
 }
-
 
 /* Subtitle */
 .hero-subtitle {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.7;
   color: #475569;
 }
 
 /* =====================
-   ACTIONS
+   ACTIONS / BUTTONS
    ===================== */
-
 .hero-actions {
   margin-top: 56px;
   display: flex;
@@ -107,11 +112,12 @@
 
 .btn {
   font-family: "Inter", system-ui, sans-serif;
-  padding: 14px 30px;
+  padding: 14px 34px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.25s ease;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .primary {
@@ -126,26 +132,26 @@
 }
 
 .secondary {
-  border: 1px solid rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(15, 23, 42, 0.25);
   color: #0f172a;
+  background: transparent;
 }
 
 .secondary:hover {
-  background: #0f172a;
-  color: #ffffff;
+  background: #f1f5f9;
+  border-color: #0f172a;
 }
 
 /* =====================
-   SOFT GLOW
+   VISUAL EFFECTS
    ===================== */
-
 .hero-glow {
   position: absolute;
   inset: 0;
   background:
     radial-gradient(
       circle at 50% 40%,
-      rgba(99, 102, 241, 0.07),
+      rgba(99, 102, 241, 0.08),
       transparent 65%
     );
   pointer-events: none;
@@ -153,12 +159,11 @@
 }
 
 /* =====================
-   RESPONSIVE
+   RESPONSIVE DESIGN
    ===================== */
-
 @media (max-width: 1024px) {
   .hero-name {
-    font-size: clamp(4.5rem, 13vw, 8.5rem);
+    font-size: clamp(4rem, 12vw, 8rem);
   }
 }
 
@@ -168,35 +173,47 @@
   }
 
   .hero-name {
-    font-size: clamp(3.6rem, 12vw, 6.8rem);
+    font-size: clamp(3rem, 13vw, 6rem);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    padding: 0 10px;
   }
 
   .hero-actions {
-    margin-top: 42px;
+    margin-top: 40px;
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-intro {
     margin-bottom: 16px;
+    font-size: 10px;
   }
 
   .hero-name {
-    font-size: clamp(2.8rem, 11vw, 5rem);
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 24px;
   }
 
   .hero-subtitle {
-    font-size: 14.5px;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .hero-actions {
     flex-direction: column;
-    gap: 14px;
+    align-items: center;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
+    max-width: 280px;
+    text-align: center;
   }
 }
