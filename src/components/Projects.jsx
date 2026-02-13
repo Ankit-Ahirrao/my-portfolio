@@ -1,152 +1,131 @@
-import "../styles/projects.css"
+import { motion } from "framer-motion";
+import "../styles/projects.css";
+
+const featuredProjects = [
+  {
+    id: "cryptokia",
+    title: "Cryptokia",
+    category: "Full Stack",
+    desc: "Real-time cryptocurrency analytics platform featuring live price tracking, market trends, and historical insights.",
+    tags: ["Ruby on Rails", "MongoDB", "APIs"],
+    link: "Private",
+    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  },
+  {
+    id: "cartedo",
+    title: "Cartedo",
+    category: "Full Stack",
+    desc: "Online education platform delivering structured learning experiences with a scalable backend architecture.",
+    tags: ["React", "Node.js", "PostgreSQL"],
+    link: "Visit →",
+    url: "https://www.cartedo.com/",
+    gradient: "linear-gradient(135deg, #2af598 0%, #009efd 100%)",
+  }
+];
+
+const standardProjects = [
+  {
+    id: "etoh",
+    title: "Etoh Suite",
+    category: "Backend",
+    desc: "Enterprise internal tools designed to streamline operational workflows.",
+    tags: ["REST APIs", "AWS"],
+    link: "Enterprise",
+  },
+  {
+    id: "face-ai",
+    title: "Face Recognition",
+    category: "AI / ML",
+    desc: "Deep learning system for real-time identity detection.",
+    tags: ["TensorFlow", "Python"],
+    link: "Research",
+  },
+  {
+    id: "ml-analytics",
+    title: "ML Analytics",
+    category: "AI / ML",
+    desc: "Predictive analytics system leveraging supervised learning.",
+    tags: ["Scikit-learn", "Python"],
+    link: "Internal",
+  }
+];
 
 export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
+        
+        {/* Header */}
+        <motion.div 
+          className="projects-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="section-label">Selected Work</p>
+          <h2 className="section-title">
+            Digital <span>Experiences</span>
+          </h2>
+        </motion.div>
 
-        <p className="projects-label">PROJECTS / WORK</p>
-        <h2 className="projects-title">
-          Selected <span>Projects</span>
-        </h2>
-
-        <div className="projects-list">
-
-          {/* Cryptokia */}
-          <div className="project-card">
-            <span className="project-badge web">FULL STACK</span>
-
-            <h3>Cryptokia</h3>
-            <p className="project-desc">
-              Real-time cryptocurrency analytics platform featuring live price
-              tracking, market trends, and historical insights.
-            </p>
-
-            <div className="project-tags">
-              <span>Ruby on Rails</span>
-              <span>MongoDB</span>
-              <span>APIs</span>
-            </div>
-
-            <div className="project-actions">
-              <span className="project-action muted">Private</span>
-            </div>
-          </div>
-
-          {/* Cartedo */}
-          <div className="project-card">
-            <span className="project-badge web">FULL STACK</span>
-
-            <h3>Cartedo</h3>
-            <p className="project-desc">
-              Online education platform delivering structured learning
-              experiences with a scalable backend architecture.
-            </p>
-
-            <div className="project-tags">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>PostgreSQL</span>
-            </div>
-
-            <div className="project-actions">
-              <a
-                href="https://www.cartedo.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="project-action"
-              >
-                Visit →
-              </a>
-            </div>
-          </div>
-
-          {/* Etoh Suite */}
-          <div className="project-card">
-            <span className="project-badge backend">BACKEND</span>
-
-            <h3>Etoh Suite</h3>
-            <p className="project-desc">
-              Enterprise internal tools suite designed to streamline workflows
-              and improve operational efficiency.
-            </p>
-
-            <div className="project-tags">
-              <span>REST APIs</span>
-              <span>AWS</span>
-              <span>Backend Systems</span>
-            </div>
-
-            <div className="project-actions">
-              <span className="project-action muted">Enterprise</span>
-            </div>
-          </div>
-
-          {/* Face Recognition */}
-          <div className="project-card">
-            <span className="project-badge ai">AI / ML</span>
-
-            <h3>Face Recognition System</h3>
-            <p className="project-desc">
-              AI-powered face recognition system using deep learning for
-              real-time identity detection and verification.
-            </p>
-
-            <div className="project-tags">
-              <span>TensorFlow</span>
-              <span>Computer Vision</span>
-              <span>Python</span>
-            </div>
-
-            <div className="project-actions">
-              <span className="project-action muted">Research</span>
-            </div>
-          </div>
-
-          {/* ML Analytics */}
-          <div className="project-card">
-            <span className="project-badge ai">AI / ML</span>
-
-            <h3>Machine Learning Analytics</h3>
-            <p className="project-desc">
-              Predictive analytics system leveraging supervised learning models
-              to extract actionable insights from data.
-            </p>
-
-            <div className="project-tags">
-              <span>Scikit-learn</span>
-              <span>Python</span>
-              <span>ML Models</span>
-            </div>
-
-            <div className="project-actions">
-              <span className="project-action muted">Internal</span>
-            </div>
-          </div>
-
-          {/* NLP */}
-          <div className="project-card">
-            <span className="project-badge ai">AI / ML</span>
-
-            <h3>NLP Text Processing</h3>
-            <p className="project-desc">
-              Natural language processing pipeline for text classification,
-              sentiment analysis, and information extraction.
-            </p>
-
-            <div className="project-tags">
-              <span>NLP</span>
-              <span>Transformers</span>
-              <span>Python</span>
-            </div>
-
-            <div className="project-actions">
-              <span className="project-action muted">Research</span>
-            </div>
-          </div>
-
+        {/* 1. Featured Grid (Top Row) */}
+        <div className="featured-grid">
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="featured-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              {/* Visual Gradient Header */}
+              <div className="card-visual" style={{ background: project.gradient }} />
+              
+              <div className="card-content">
+                <div className="card-top">
+                  <span className="card-category">{project.category}</span>
+                  {project.url && <a href={project.url} className="card-external-link">↗</a>}
+                </div>
+                
+                <h3>{project.title}</h3>
+                <p>{project.desc}</p>
+                
+                <div className="card-tags">
+                  {project.tags.map(tag => <span key={tag}>{tag}</span>)}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* 2. Standard Grid (Bottom Grid) */}
+        <div className="standard-grid">
+          {standardProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="standard-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + (index * 0.1) }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="card-content-compact">
+                 <span className="card-category-sm">{project.category}</span>
+                 <h3>{project.title}</h3>
+                 <p>{project.desc}</p>
+                 <div className="card-tags">
+                    {project.tags.map(tag => <span key={tag}>{tag}</span>)}
+                 </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
-  )
+  );
 }
