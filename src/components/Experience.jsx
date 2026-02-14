@@ -1,92 +1,109 @@
-import { motion } from "framer-motion"
-import "../styles/experience.css"
+import { motion } from "framer-motion";
+import "../styles/experience.css";
 
 const experiences = [
   {
-    type: "education",
+    type: "Education",
     title: "M.Tech — Computer Science",
     org: "Indian Institute of Technology, Jammu",
-    period: "2025 – 2027 (Current)",
+    period: "2025 – Present", // Changed to Present for clarity
     location: "Jammu, India",
     description:
-      "Pursuing M.Tech in Computer Science with focus on advanced systems, machine learning, and core computer science foundations.",
+      "Specializing in High-Performance Computing and ML Systems. Conducting research on distributed systems architecture.",
     tags: ["Machine Learning", "Systems", "Algorithms"]
   },
   {
-    type: "work",
-    title: "Software Engineer — Ruby on Rails",
+    type: "Work",
+    title: "Software Engineer",
     org: "Precious Infosystem",
-    period: "Nov 2023 – Jun 2025",
+    period: "2023 – 2025",
     location: "Remote",
     description:
-      "Built backend-heavy web applications using Ruby on Rails. Designed RESTful APIs, integrated third-party services, implemented real-time features using Action Cable, and followed TDD/BDD practices.",
-    tags: ["Ruby on Rails", "APIs", "MongoDB", "PostgreSQL"]
+      "Architected backend-heavy Rails applications. Designed scalable RESTful APIs and implemented real-time WebSocket features for high-traffic dashboards.",
+    tags: ["Ruby on Rails", "PostgreSQL", "Redis"]
   },
   {
-    type: "work",
+    type: "Work",
     title: "Junior Software Engineer",
     org: "Bestpeers Infosystem",
-    period: "May 2022 – Oct 2023",
+    period: "2022 – 2023",
     location: "India",
     description:
-      "Developed and maintained enterprise applications. Built scalable APIs, automated test suites using RSpec & Minitest, and contributed to stable production deployments.",
-    tags: ["Ruby", "RSpec", "REST APIs"]
+      "Maintained enterprise SaaS products. Optimized database queries reducing load times by 40% and automated testing pipelines.",
+    tags: ["Ruby", "RSpec", "CI/CD"]
   },
   {
-    type: "work",
+    type: "Work",
     title: "Assistant System Engineer",
-    org: "Tata Consultancy Services (TCS)",
-    period: "Jun 2021 – Jun 2022",
+    org: "Tata Consultancy Services",
+    period: "2021 – 2022",
     location: "India",
     description:
-      "Worked on ETL pipelines using QlikView. Designed optimized SQL queries, built data workflows, and supported enterprise dashboards.",
-    tags: ["SQL", "ETL", "QlikView"]
+      "Engineered ETL pipelines processing large-scale datasets. Developed enterprise dashboards using QlikView and SQL.",
+    tags: ["SQL", "ETL", "Data Warehousing"]
   },
   {
-    type: "education",
+    type: "Education",
     title: "B.Tech — Information Technology",
-    org: "Chameli Devi Group of Institutions (RGPV)",
+    org: "RGPV University",
     period: "2017 – 2021",
     location: "Indore, India",
     description:
-      "Graduated with strong academic performance (CGPA 8.80). Built solid foundations in programming, data structures, and software engineering.",
-    tags: ["DSA", "Programming", "CS Fundamentals"]
+      "Graduated with 8.80 CGPA. Focused on Data Structures, Algorithms, and Object-Oriented System Design.",
+    tags: ["DSA", "OS", "DBMS"]
   }
-]
+];
 
 export default function Experience() {
   return (
     <section className="experience" id="experience">
       <div className="experience-container">
+        
+        {/* Header */}
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-label">The Journey</span>
+          <h2 className="section-title">
+            Experience & <span className="highlight">Education</span>
+          </h2>
+        </motion.div>
 
-        <p className="experience-label">— EXPERIENCE</p>
-        <h2 className="experience-title">
-          Education & Professional Journey
-        </h2>
-
-        <div className="timeline">
+        {/* List Layout */}
+        <div className="experience-list">
           {experiences.map((item, index) => (
             <motion.div
               key={index}
-              className={`timeline-item ${item.type}`}
-              initial={{ opacity: 0, y: 32 }}
+              className="experience-row"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="timeline-dot" />
-              <div className="timeline-card">
-                <h3>{item.title}</h3>
-                <span className="org">
-                  {item.org} · {item.location}
+              {/* Left Column: Date & Type */}
+              <div className="exp-meta">
+                <span className="exp-period">{item.period}</span>
+                <span className={`exp-type ${item.type.toLowerCase()}`}>
+                  {item.type}
                 </span>
-                <span className="period">{item.period}</span>
+              </div>
 
-                <p>{item.description}</p>
-
-                <div className="tags">
+              {/* Right Column: Content */}
+              <div className="exp-content">
+                <div className="exp-header">
+                  <h3 className="exp-title">{item.title}</h3>
+                  <span className="exp-org">{item.org}</span>
+                </div>
+                
+                <p className="exp-desc">{item.description}</p>
+                
+                <div className="exp-tags">
                   {item.tags.map((tag, i) => (
-                    <span key={i}>{tag}</span>
+                    <span key={i} className="exp-tag">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -96,5 +113,5 @@ export default function Experience() {
 
       </div>
     </section>
-  )
+  );
 }

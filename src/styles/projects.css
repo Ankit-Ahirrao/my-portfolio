@@ -1,6 +1,6 @@
 .projects {
-  background: #f8fafc; /* Slight grey for contrast against white cards */
-  padding: 120px 0;
+  background: #ffffff; /* Pure white background */
+  padding: 140px 0;
   position: relative;
 }
 
@@ -10,21 +10,23 @@
   padding: 0 24px;
 }
 
-/* Typography */
+/* --- Section Header --- */
 .section-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #6366f1;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .section-title span {
@@ -32,131 +34,182 @@
 }
 
 /* =====================
-   GRID 1: FEATURED (Top Row)
+   GRID 1: FEATURED
    ===================== */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-bottom: 30px;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 
 .featured-card {
   background: #ffffff;
   border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.04);
+  padding: 42px; /* Generous padding is key to "Simple" look */
+  border: 1px solid rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Very subtle shadow normally */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
-/* The gradient block at the top of featured cards */
-.card-visual {
-  height: 180px;
-  width: 100%;
+.featured-card:hover {
+  transform: translateY(-6px);
+  /* Stronger shadow on hover to lift it */
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+  border-color: #cbd5e1;
 }
 
-.card-content {
-  padding: 32px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
+/* Content */
 .card-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
+  align-items: flex-start;
+  margin-bottom: 32px;
 }
 
-.card-category {
+.card-badge {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #64748b;
-  background: #f1f5f9;
-  padding: 6px 12px;
+  color: #4f46e5;
+  background: #eef2ff;
+  padding: 8px 16px;
   border-radius: 100px;
 }
 
-.featured-card h3 {
-  font-size: 24px;
-  font-weight: 700;
+.card-link-icon {
   color: #0f172a;
-  margin-bottom: 12px;
+  background: #f1f5f9;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.featured-card p {
-  font-size: 16px;
-  color: #475569;
+.card-link-icon:hover {
+  background: #0f172a;
+  color: #ffffff;
+  transform: rotate(45deg); /* Cool interaction */
+}
+
+.status-label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.card-desc {
+  font-size: 17px;
   line-height: 1.6;
-  margin-bottom: 24px;
+  color: #475569;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-tags span {
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 8px;
 }
 
 /* =====================
-   GRID 2: STANDARD (Bottom Row)
+   GRID 2: STANDARD
    ===================== */
 .standard-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Strict 3 columns */
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .standard-card {
   background: #ffffff;
   border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-  border: 1px solid rgba(0,0,0,0.04);
+  padding: 32px;
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
   transition: all 0.3s ease;
 }
 
 .standard-card:hover {
-  box-shadow: 0 20px 40px -12px rgba(0,0,0,0.08);
-  border-color: #e2e8f0;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.06);
+  border-color: #cbd5e1;
 }
 
-.card-category-sm {
-  font-size: 10px;
-  font-weight: 700;
-  color: #6366f1;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.standard-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #0f172a;
-}
-
-.standard-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #64748b;
+.card-header-sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-/* Common Tags */
-.card-tags {
-  margin-top: auto;
+.card-badge-sm {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6366f1;
+}
+
+.status-label-sm {
+  font-size: 11px;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.card-title-sm {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.card-desc-sm {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.card-tags-sm {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.card-tags span {
+.card-tags-sm span {
   font-size: 11px;
-  font-weight: 500;
-  color: #475569;
+  color: #64748b;
   background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #f1f5f9;
   padding: 4px 10px;
   border-radius: 6px;
 }
@@ -166,20 +219,21 @@
    ===================== */
 @media (max-width: 1024px) {
   .standard-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cols on tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .featured-grid {
-    grid-template-columns: 1fr; /* Stack featured cards */
+  .featured-grid, .standard-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
   
-  .standard-grid {
-    grid-template-columns: 1fr; /* Stack standard cards */
+  .featured-card {
+    padding: 32px;
   }
   
-  .section-title {
-    font-size: 2.5rem;
+  .card-title {
+    font-size: 26px;
   }
 }

@@ -9,7 +9,6 @@ const featuredProjects = [
     desc: "Real-time cryptocurrency analytics platform featuring live price tracking, market trends, and historical insights.",
     tags: ["Ruby on Rails", "MongoDB", "APIs"],
     link: "Private",
-    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   },
   {
     id: "cartedo",
@@ -19,7 +18,6 @@ const featuredProjects = [
     tags: ["React", "Node.js", "PostgreSQL"],
     link: "Visit →",
     url: "https://www.cartedo.com/",
-    gradient: "linear-gradient(135deg, #2af598 0%, #009efd 100%)",
   }
 ];
 
@@ -69,7 +67,7 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        {/* 1. Featured Grid (Top Row) */}
+        {/* Featured Grid (Top) */}
         <div className="featured-grid">
           {featuredProjects.map((project, index) => (
             <motion.div
@@ -81,27 +79,28 @@ export default function Projects() {
               transition={{ delay: index * 0.2 }}
               whileHover={{ y: -5 }}
             >
-              {/* Visual Gradient Header */}
-              <div className="card-visual" style={{ background: project.gradient }} />
+              <div className="card-top">
+                <span className="card-badge">{project.category}</span>
+                {project.url ? (
+                  <a href={project.url} className="card-link-icon" target="_blank" rel="noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                  </a>
+                ) : (
+                  <span className="status-label">{project.link}</span>
+                )}
+              </div>
               
-              <div className="card-content">
-                <div className="card-top">
-                  <span className="card-category">{project.category}</span>
-                  {project.url && <a href={project.url} className="card-external-link">↗</a>}
-                </div>
-                
-                <h3>{project.title}</h3>
-                <p>{project.desc}</p>
-                
-                <div className="card-tags">
-                  {project.tags.map(tag => <span key={tag}>{tag}</span>)}
-                </div>
+              <h3 className="card-title">{project.title}</h3>
+              <p className="card-desc">{project.desc}</p>
+              
+              <div className="card-tags">
+                {project.tags.map(tag => <span key={tag}>{tag}</span>)}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* 2. Standard Grid (Bottom Grid) */}
+        {/* Standard Grid (Bottom) */}
         <div className="standard-grid">
           {standardProjects.map((project, index) => (
             <motion.div
@@ -110,16 +109,19 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 + (index * 0.1) }}
+              transition={{ delay: 0.2 + (index * 0.1) }}
               whileHover={{ y: -5 }}
             >
-              <div className="card-content-compact">
-                 <span className="card-category-sm">{project.category}</span>
-                 <h3>{project.title}</h3>
-                 <p>{project.desc}</p>
-                 <div className="card-tags">
-                    {project.tags.map(tag => <span key={tag}>{tag}</span>)}
-                 </div>
+              <div className="card-header-sm">
+                <span className="card-badge-sm">{project.category}</span>
+                <span className="status-label-sm">{project.link}</span>
+              </div>
+              
+              <h3 className="card-title-sm">{project.title}</h3>
+              <p className="card-desc-sm">{project.desc}</p>
+              
+              <div className="card-tags-sm">
+                 {project.tags.map(tag => <span key={tag}>{tag}</span>)}
               </div>
             </motion.div>
           ))}
