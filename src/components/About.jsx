@@ -1,5 +1,5 @@
-import "../styles/about.css"
-import profileImg from "../assets/profile.jpg"
+import "../styles/about.css";
+import profileImg from "../assets/profile.jpg";
 
 export default function About() {
   return (
@@ -8,61 +8,59 @@ export default function About() {
 
         {/* LEFT CONTENT */}
         <div className="about-content">
-          <span className="about-label">ABOUT</span>
+          <span className="section-label">About Me</span>
 
-          <h2 className="about-title serif-heading">
-            Designing & building
-            <br />
-            reliable, scalable systems
+          <h2 className="about-title">
+            Designing & building <br />
+            <span className="italic-serif">reliable systems.</span>
           </h2>
 
-          <p className="about-text">
-            I’m a Full Stack Engineer with 4+ years of experience building
-            backend-heavy web applications and production-grade systems.
-            My work focuses on clean architecture, scalable APIs,
-            and long-term maintainability.
-          </p>
+          <div className="about-body">
+            <p>
+              I’m a Full Stack Engineer with 4+ years of experience engineering
+              backend-heavy web applications. My work focuses on **clean architecture**, 
+              scalable APIs, and systems that maintain performance at scale.
+            </p>
+            <p>
+              I have worked extensively with Ruby on Rails, RESTful services, and modern 
+              JavaScript frameworks. I enjoy solving real-world problems where 
+              reliability, clarity, and long-term maintainability are the priority.
+            </p>
+          </div>
 
-          <p className="about-text">
-            I’ve worked extensively with Ruby on Rails, RESTful services,
-            relational and NoSQL databases, and modern JavaScript frameworks.
-            I enjoy solving real-world problems where performance,
-            reliability, and clarity matter.
-          </p>
+          {/* Core Stack Tags */}
+          <div className="about-stack">
+            <span className="stack-label">Core Technologies</span>
+            <div className="stack-tags">
+              <span>Ruby on Rails</span>
+              <span>React</span>
+              <span>Node.js</span>
+              <span>PostgreSQL</span>
+              <span>AWS</span>
+            </div>
+          </div>
 
-          <p className="about-tech">
-            <strong>Core stack:</strong>{" "}
-            React · Ruby on Rails · Node.js · PostgreSQL · AWS
-          </p>
-
-          {/* LINKS */}
+          {/* Social Links */}
           <div className="about-links">
-            <a
-              href="https://in.linkedin.com/in/ankit-ahirrao"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
+            <a href="https://in.linkedin.com/in/ankit-ahirrao" target="_blank" rel="noreferrer" className="link-item">
+              LinkedIn ↗
             </a>
-            <a
-              href="https://github.com/Ankit-Ahirrao"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
+            <a href="https://github.com/Ankit-Ahirrao" target="_blank" rel="noreferrer" className="link-item">
+              GitHub ↗
             </a>
-            <a href="mailto:ahirraoankit5@gmail.com">
-              Email
+            <a href="mailto:ahirraoankit5@gmail.com" className="link-item">
+              Email ↗
             </a>
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="about-image">
-          <img src={profileImg} alt="Ankit Ahirrao" />
+        <div className="about-image-wrapper">
+          <img src={profileImg} alt="Ankit Ahirrao" className="profile-img" />
+          <div className="img-backdrop"></div>
         </div>
 
       </div>
     </section>
-  )
+  );
 }
