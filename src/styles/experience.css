@@ -5,12 +5,18 @@
 }
 
 .experience-container {
-  max-width: 1000px; /* Slightly tighter width for reading focus */
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* --- Typography & Header --- */
+/* =====================
+   HEADER
+   ===================== */
+.section-header {
+  margin-bottom: 80px;
+}
+
 .section-label {
   display: block;
   font-size: 11px;
@@ -18,23 +24,28 @@
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #6366f1;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 80px;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-.section-title .highlight {
-  color: #6366f1; /* Consistent brand color */
+.italic-serif {
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #334155;
 }
 
-/* --- Experience List Grid --- */
+/* =====================
+   LIST LAYOUT
+   ===================== */
 .experience-list {
   display: flex;
   flex-direction: column;
@@ -42,21 +53,26 @@
 
 .experience-row {
   display: grid;
-  /* Desktop: 25% Width for Date, 75% for Content */
-  grid-template-columns: 220px 1fr; 
-  gap: 32px;
+  /* Fixed width for date (architectural look) | Rest for content */
+  grid-template-columns: 200px 1fr; 
+  gap: 48px;
   padding: 48px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08); /* The separator line */
-  transition: background 0.3s ease;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  transition: opacity 0.3s ease;
 }
 
-/* Optional: Slight hover effect to highlight the row */
-.experience-row:hover .exp-title {
-  color: #6366f1;
+/* Fade out other items on hover (optional high-end effect) */
+.experience-list:hover .experience-row {
+  opacity: 0.4;
+}
+.experience-list .experience-row:hover {
+  opacity: 1;
 }
 
-/* --- Left Column: Meta (Date & Type) --- */
-.exp-meta {
+/* =====================
+   LEFT SIDE (Sidebar)
+   ===================== */
+.exp-sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -64,65 +80,70 @@
 }
 
 .exp-period {
-  font-size: 16px;
+  font-family: 'JetBrains Mono', monospace; /* Tech feel for dates */
+  font-size: 13px;
   font-weight: 600;
-  color: #0f172a; /* Darker date for importance */
-  font-variant-numeric: tabular-nums; /* Better number alignment */
+  color: #0f172a;
 }
 
 .exp-type {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border-radius: 100px;
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  border-radius: 4px;
 }
 
+/* Minimalist Badges */
 .exp-type.education {
-  background: #eff6ff; /* Light Blue */
-  color: #3b82f6;
+  background: #f1f5f9;
+  color: #475569;
 }
 
 .exp-type.work {
-  background: #f8fafc; /* Light Grey */
-  color: #64748b;
-  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #6366f1; /* Brand color text only */
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
-/* --- Right Column: Content --- */
-.exp-content {
+/* =====================
+   RIGHT SIDE (Main)
+   ===================== */
+.exp-main {
   display: flex;
   flex-direction: column;
 }
 
-.exp-header {
+.exp-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
   margin-bottom: 12px;
 }
 
-.exp-title {
-  font-size: 22px;
+.exp-role {
+  font-size: 20px;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 4px;
-  transition: color 0.2s ease;
 }
 
-.exp-org {
+.exp-company {
   font-size: 16px;
   color: #64748b;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-.exp-desc {
+.exp-description {
   font-size: 16px;
   line-height: 1.7;
   color: #475569;
   margin-bottom: 24px;
-  max-width: 90%; /* Stops text from getting too wide to read */
+  max-width: 600px;
 }
 
-/* --- Tags --- */
+/* Tags */
 .exp-tags {
   display: flex;
   flex-wrap: wrap;
@@ -132,40 +153,43 @@
 .exp-tag {
   font-size: 12px;
   font-weight: 500;
-  color: #475569;
-  background: #f1f5f9;
+  color: #64748b;
+  background: #f8fafc;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 99px; /* Pill shape */
+  border: 1px solid transparent;
   transition: all 0.2s;
 }
 
 .experience-row:hover .exp-tag {
-  background: #e2e8f0;
-  color: #0f172a;
+  border-color: #cbd5e1;
+  background: #ffffff;
 }
 
-/* --- Responsive --- */
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 48px;
-  }
-
   .experience-row {
-    grid-template-columns: 1fr; /* Stack visually on mobile */
-    gap: 16px;
-    padding: 40px 0;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 32px 0;
   }
 
-  .exp-meta {
-    flex-direction: row; /* Put Date and Type side-by-side on mobile */
+  .exp-sidebar {
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
-
-  .exp-desc {
-    max-width: 100%;
+  
+  .exp-title-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .experience-list:hover .experience-row {
+    opacity: 1; /* Disable hover fade effect on mobile */
   }
 }

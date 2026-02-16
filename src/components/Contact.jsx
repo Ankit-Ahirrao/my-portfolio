@@ -1,107 +1,118 @@
-import "../styles/contact.css"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import "../styles/contact.css";
 
 export default function Contact() {
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
 
-        {/* Section Header */}
-        <p className="contact-label">— CONNECT</p>
-        <h2 className="contact-title">
-          Let’s <span>build</span> something meaningful
-        </h2>
-        <p className="contact-subtitle">
-          Have a question, idea, or opportunity? I’d love to hear from you.
-        </p>
+        <div className="contact-content">
+          
+          {/* LEFT SIDE: Big Typography & Direct Info */}
+          <div className="contact-info">
+            <span className="section-label">Get in Touch</span>
+            
+            <h2 className="contact-title">
+              Let’s build something <br />
+              <span className="italic-serif">meaningful.</span>
+            </h2>
 
-        <div className="contact-grid">
+            <p className="contact-desc">
+              Have a project in mind or just want to talk shop? 
+              I’m currently open to new opportunities and collaborations.
+            </p>
 
-          {/* LEFT: CONTACT OPTIONS */}
-          <div className="contact-cards">
+            {/* The "Hero" Email Link */}
+            <div className="email-wrapper">
+              <a href="mailto:ahirraoankit5@gmail.com" className="big-email">
+                ahirraoankit5@gmail.com
+              </a>
+            </div>
 
-            <a
-              href="mailto:ahirraoankit5@gmail.com"
-              className="contact-card"
-            >
-              <div className="contact-icon">✉️</div>
-              <div>
-                <h4>Email</h4>
-                <p>ahirraoankit5@gmail.com</p>
-                <span>Send a message</span>
-              </div>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/ankit-ahirrao/"
-              target="_blank"
-              rel="noreferrer"
-              className="contact-card"
-            >
-              <div className="contact-icon">in</div>
-              <div>
-                <h4>LinkedIn</h4>
-                <p>linkedin.com/in/ankit-ahirrao</p>
-                <span>Connect</span>
-              </div>
-            </a>
-
-            <a
-              href="https://github.com/Ankit-Ahirrao"
-              target="_blank"
-              rel="noreferrer"
-              className="contact-card"
-            >
-              <div className="contact-icon">⌘</div>
-              <div>
-                <h4>GitHub</h4>
-                <p>@Ankit-Ahirrao</p>
-                <span>View code</span>
-              </div>
-            </a>
-
+            {/* Clean Social Links */}
+            <div className="social-row">
+              <a 
+                href="https://www.linkedin.com/in/ankit-ahirrao/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="social-link"
+              >
+                LinkedIn ↗
+              </a>
+              <a 
+                href="https://github.com/Ankit-Ahirrao" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="social-link"
+              >
+                GitHub ↗
+              </a>
+              <a 
+                href="https://twitter.com/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="social-link"
+              >
+                X (Twitter) ↗
+              </a>
+            </div>
           </div>
 
-          {/* RIGHT: FORM */}
-          <motion.form
-            className="contact-form"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          {/* RIGHT SIDE: Clean, Architectural Form */}
+          <motion.div 
+            className="form-wrapper"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            action="mailto:ahirraoankit5@gmail.com"
-            method="POST"
-            encType="text/plain"
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3>Send me a message</h3>
+            <form
+              className="contact-form"
+              action="mailto:ahirraoankit5@gmail.com"
+              method="POST"
+              encType="text/plain"
+            >
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name (optional)"
-            />
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-            />
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell me about your project..."
+                  required
+                />
+              </div>
 
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="What would you like to discuss?"
-              required
-            />
-
-            <button type="submit">
-              Send Message →
-            </button>
-          </motion.form>
+              <button type="submit" className="submit-btn">
+                Send Message
+              </button>
+            </form>
+          </motion.div>
 
         </div>
       </div>
     </section>
-  )
+  );
 }
