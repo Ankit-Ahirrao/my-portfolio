@@ -3,8 +3,8 @@ import profileImg from "../assets/profile.jpg";
 
 export default function About() {
   return (
-    <section className="about" id="about">
-      <div className="about-container">
+    <section className="about section" id="about">
+      <div className="container">
 
         {/* LEFT CONTENT */}
         <div className="about-content">

@@ -28,8 +28,8 @@ export default function Story() {
   };
 
   return (
-    <section className="story">
-      <div className="story-container">
+    <section className="story section">
+      <div className="container">
 
         {/* LEFT CONTENT - Editorial Typography */}
         <div className="story-content">

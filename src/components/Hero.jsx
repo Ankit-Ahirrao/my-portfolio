@@ -33,7 +33,7 @@ export default function Hero() {
       <Navbar />
       <HeroMeta />
 
-      <section id="home" className="hero">
+      <section id="home" className="hero section">
         <motion.div
           className="hero-glow"
           initial={{ opacity: 0 }}

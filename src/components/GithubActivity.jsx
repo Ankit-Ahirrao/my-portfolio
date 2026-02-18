@@ -3,8 +3,8 @@ import "../styles/githubActivity.css";
 
 export default function GithubActivity() {
   return (
-    <section className="github" id="github">
-      <div className="github-container">
+    <section className="github section" id="github">
+      <div className="container">
         
         {/* Header */}
         <div className="github-header">
