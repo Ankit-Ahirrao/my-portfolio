@@ -27,8 +27,8 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills section" className="skills">
-      <div className="container">
+    <section id="skills" className="skills">
+      <div className="skills-container">
 
         <p className="skills-eyebrow">MY SKILLSET</p>
         

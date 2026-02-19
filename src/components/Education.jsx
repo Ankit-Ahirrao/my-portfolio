@@ -3,8 +3,8 @@ import "../styles/education.css"
 
 export default function Education() {
   return (
-    <section className="education section" id="education">
-      <div className="container">
+    <section className="education" id="education">
+      <div className="education-container">
         <h2 className="section-title">Education</h2>
 
         {profile.education.map((edu, index) => (

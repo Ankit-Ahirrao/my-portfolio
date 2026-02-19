@@ -50,8 +50,8 @@ const standardProjects = [
 
 export default function Projects() {
   return (
-    <section className="projects section" id="projects">
-      <div className="container">
+    <section className="projects" id="projects">
+      <div className="projects-container">
         
         {/* Header */}
         <motion.div 

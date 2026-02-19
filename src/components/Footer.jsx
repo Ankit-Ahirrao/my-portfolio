@@ -10,8 +10,8 @@ export default function Footer() {
   }
 
   return (
-    <footer className="footer section">
-      <div className="container">
+    <footer className="footer">
+      <div className="footer-container">
         
         <div className="footer-top">
           

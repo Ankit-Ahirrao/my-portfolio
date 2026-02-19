@@ -1,61 +1,52 @@
 :root {
-  --container-width: 1120px;   /* slightly wider = more premium */
-  --grid-gap: 80px;
-  --section-spacing: 120px;
-  --section-spacing-sm: 90px;
+  /* ... existing vars ... */
+  --container-width: 1100px; /* The "Golden" width for readability */
+  --grid-gap: 64px;
 }
 
-/* ================================
-   MASTER CONTAINER SYSTEM
-================================ */
-
+/* --- THE FIX: Standard Container --- */
 .container {
-  width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 32px;   /* 24px was slightly tight */
+  padding: 0 24px;
+  width: 100%;
 }
 
-/* Section spacing rhythm */
-.section {
-  padding: var(--section-spacing) 0;
+/* Utility to visualize the grid (remove later) */
+.debug-grid {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
 }
 
-.section-sm {
-  padding: var(--section-spacing-sm) 0;
-}
-
-/* ================================
-   STANDARD SECTION HEADER
-================================ */
-
+/* Standard Section Header */
 .section-header-std {
-  margin-bottom: 72px;
-  max-width: 760px;  /* prevents stretched titles */
+  margin-bottom: 80px;
+  max-width: 800px; /* Prevents titles from stretching too wide */
 }
 
 .section-label-std {
-  display: inline-block;
+  display: block;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #6366f1;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .section-title-std {
-  font-family: "Inter", sans-serif;
-  font-size: clamp(2.4rem, 4.5vw, 3.2rem);
-  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
   color: #0f172a;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
+/* Serif accent for titles */
 .title-serif {
   font-family: "Times New Roman", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  color: #475569;
+  color: #334155;
 }

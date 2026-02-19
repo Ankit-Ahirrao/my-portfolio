@@ -51,8 +51,8 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="experience section" id="experience">
-      <div className="container">
+    <section className="experience" id="experience">
+      <div className="experience-container">
         
         {/* Header - Matching the "Parth" Aesthetic */}
         <div className="section-header">
