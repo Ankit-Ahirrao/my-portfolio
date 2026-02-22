@@ -38,7 +38,7 @@ export default function About() {
               <div className="stack-tags">
                 <span>Ruby on Rails</span>
                 <span>React</span>
-                <span>Node.js</span>
+                <span>Docker</span>
                 <span>PostgreSQL</span>
                 <span>AWS</span>
               </div>
