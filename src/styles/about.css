@@ -1,6 +1,10 @@
+/* =====================
+   SECTION WRAPPER
+   ===================== */
+
 .about {
   background: #ffffff;
-  padding: 140px 0; /* Generous vertical spacing */
+  padding: 140px 0;
   position: relative;
 }
 
@@ -8,11 +12,11 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
-  
+
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr; /* Text gets more space */
+  grid-template-columns: 1.3fr 0.8fr;
   gap: 80px;
-  align-items: flex-start; /* KEY: Top align looks more "editorial" */
+  align-items: flex-start;
 }
 
 /* =====================
@@ -30,8 +34,8 @@
 }
 
 .about-title {
-  font-family: 'Inter', sans-serif; /* Mix Sans & Serif */
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
   font-weight: 800;
   line-height: 1.1;
   color: #0f172a;
@@ -39,7 +43,6 @@
   letter-spacing: -0.02em;
 }
 
-/* The italic part makes it look premium/personal */
 .italic-serif {
   font-family: "Times New Roman", Georgia, serif;
   font-style: italic;
@@ -47,10 +50,13 @@
   color: #334155;
 }
 
-/* Body Text */
+/* =====================
+   BODY TEXT
+   ===================== */
+
 .about-body p {
   font-size: 17px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #475569;
   margin-bottom: 24px;
   max-width: 90%;
@@ -62,54 +68,13 @@
 }
 
 /* =====================
-   STACK TAGS
+   LINKS
    ===================== */
-.about-stack {
-  margin-top: 40px;
-  margin-bottom: 48px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(0,0,0,0.06); /* Subtle divider */
-}
 
-.stack-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #94a3b8;
-  margin-bottom: 16px;
-}
-
-.stack-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.stack-tags span {
-  font-size: 13px;
-  font-weight: 500;
-  color: #0f172a;
-  background: #f1f5f9;
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  transition: all 0.2s;
-}
-
-.stack-tags span:hover {
-  background: #ffffff;
-  border-color: #cbd5e1;
-  transform: translateY(-2px);
-}
-
-/* =====================
-   LINKS (Minimal)
-   ===================== */
 .about-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
+  margin-top: 32px;
 }
 
 .link-item {
@@ -118,7 +83,7 @@
   color: #0f172a;
   text-decoration: none;
   position: relative;
-  transition: color 0.2s;
+  transition: color 0.25s ease;
 }
 
 .link-item::after {
@@ -137,62 +102,88 @@
 }
 
 .link-item:hover {
-  color: #6366f1; /* Brand color on hover */
+  color: #6366f1;
 }
+
 .link-item:hover::after {
   background: #6366f1;
 }
 
 /* =====================
-   IMAGE (Clean & Sharp)
+   IMAGE (Editorial Card Style)
    ===================== */
+
 .about-image-wrapper {
   position: relative;
-  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .profile-img {
   width: 100%;
-  max-width: 400px; /* Control max width */
-  aspect-ratio: 3/4; /* Portrait standard */
+  max-width: 420px;
+  aspect-ratio: 3/4;
   object-fit: cover;
-  border-radius: 12px;
-  filter: grayscale(100%);
-  transition: filter 0.5s ease, transform 0.5s ease;
+  border-radius: 18px;
   display: block;
-  /* Sharp shadow */
-  box-shadow: 20px 20px 0px #f1f5f9; 
+
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.1);
+
+  filter: grayscale(100%);
+  transition: all 0.6s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* Hover Effect */
 .about-image-wrapper:hover .profile-img {
   filter: grayscale(0%);
-  transform: translate(-5px, -5px);
-  box-shadow: 25px 25px 0px #e2e8f0; 
+  transform: translateY(-6px);
+}
+
+/* Subtle background offset layer */
+.about-image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  border-radius: 18px;
+  background: #f1f5f9;
+  top: 24px;
+  right: -24px;
+  z-index: -1;
 }
 
 /* =====================
    RESPONSIVE
    ===================== */
+
 @media (max-width: 900px) {
+  .about {
+    padding: 100px 0;
+  }
+
   .about-container {
     grid-template-columns: 1fr;
     gap: 60px;
   }
 
   .about-image-wrapper {
-    order: -1; /* Image on top for mobile */
-    display: flex;
+    order: -1;
     justify-content: flex-start;
   }
-  
+
   .profile-img {
     max-width: 100%;
-    aspect-ratio: 4/3; /* Landscape on mobile often looks better */
-    box-shadow: 12px 12px 0px #f1f5f9;
+    aspect-ratio: 4/3;
   }
-  
+
+  .about-image-wrapper::before {
+    display: none;
+  }
+
   .about-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 }
